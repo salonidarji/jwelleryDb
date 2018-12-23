@@ -5,8 +5,8 @@ var Category = {
     getAllCategory:function(callback){
         return db.query("select * from category_tbl",callback);
     },
-    getCategory:function(id,callback) {
-        return db.query("select * from category_tbl where pk_category_id=?",[id],callback);
+    getJwelleryByCategory:function(id,callback){
+        return db.query("select * from jwellery_tbl where fk_category_id=?",[id],callback);
     },
     insertCategory:function(item,callback){
         return db.query("INSERT INTO category_tbl VALUES(?,?)",[item.pk_category_id,item.category_name],callback);

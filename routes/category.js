@@ -6,7 +6,7 @@ var Category = require('../models/categoryModel');
 router.get('/:id?',function(req,res,next){
     
     if(req.params.id){
-        Category.getCategory(req.params.id,function(err,rows){
+        Category.getJwelleryByCategory(req.params.id,function(err,rows){
             if(err){
                 res.json(err);
             }
